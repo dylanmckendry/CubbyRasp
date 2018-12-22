@@ -6,12 +6,16 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="OnLoaded">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="OnLoaded" DoubleTapped="OnDoubleTapped"
+    ManipulationMode="TranslateX,TranslateInertia,System" 
+    ManipulationDelta="OnManipulationDelta"
+    ManipulationCompleted="OnManipulationCompleted">
 
     <Grid>
         <Image x:Name="BackgroundImage" Stretch="UniformToFill" />
 
-        <Grid Background="#9B000000">
+        <Grid x:Name="ControlsGrid" Background="#9B000000">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
                 <RowDefinition />
@@ -29,11 +33,11 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" HorizontalAlignment="Center" FontSize="22" Width="80">ON</Button>
+                <ToggleButton x:Name="AprilLight1Button" Grid.Column="0" HorizontalAlignment="Center" FontSize="22" Width="80">OFF</ToggleButton>
                 <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" >
                     April
                 </TextBlock>
-                <Button Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Width="80">ON</Button>
+                <ToggleButton x:Name="AprilLight2Button" Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Width="80">OFF</ToggleButton>
             </Grid>
 
             <Grid Row="0" Column="2">
@@ -42,11 +46,11 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" HorizontalAlignment="Center" FontSize="22" Width="80">ON</Button>
+                <ToggleButton x:Name="EttaLight1Button" Grid.Column="0" HorizontalAlignment="Center" FontSize="22" Width="80">OFF</ToggleButton>
                 <TextBlock Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="36" >
                     Etta
                 </TextBlock>
-                <Button Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Width="80">ON</Button>
+                <ToggleButton x:Name="EttaLight2Button" Grid.Column="2" HorizontalAlignment="Center" FontSize="22" Width="80">OFF</ToggleButton>
             </Grid>
 
             <Grid Row="1" Column="0" ColumnSpan="3">
