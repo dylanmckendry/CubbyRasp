@@ -142,11 +142,14 @@ namespace CubbyRasp.Display
             await SetBackgroundPictureSource(_imageFiles.Next);
         }
 
-        private void OnDoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        private void BackgroundImageTapped(object sender, TappedRoutedEventArgs e)
         {
-            ControlsGrid.Visibility = ControlsGrid.Visibility == Visibility.Visible
-                ? Visibility.Collapsed
-                : Visibility.Visible;
+            ControlsGrid.Visibility = Visibility.Visible;
+        }
+
+        private void BackgroundGridDoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            ControlsGrid.Visibility = Visibility.Collapsed;
         }
 
         private bool _isSwiped;
@@ -179,5 +182,6 @@ namespace CubbyRasp.Display
         {
             _isSwiped = false;
         }
+
     }
 }

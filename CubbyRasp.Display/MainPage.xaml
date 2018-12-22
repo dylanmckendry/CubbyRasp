@@ -7,15 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    Loaded="OnLoaded" DoubleTapped="OnDoubleTapped"
+    Loaded="OnLoaded"
     ManipulationMode="TranslateX,TranslateInertia,System" 
     ManipulationDelta="OnManipulationDelta"
     ManipulationCompleted="OnManipulationCompleted">
 
     <Grid>
-        <Image x:Name="BackgroundImage" Stretch="UniformToFill" />
+        <Image x:Name="BackgroundImage" Stretch="UniformToFill" Tapped="BackgroundImageTapped" />
 
-        <Grid x:Name="ControlsGrid" Background="#9B000000">
+        <Grid x:Name="ControlsGrid" Background="#9B000000" DoubleTapped="BackgroundGridDoubleTapped">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
                 <RowDefinition />
